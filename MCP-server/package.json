@@ -1,0 +1,27 @@
+{
+  "name": "@thealihamza04/a11y-mcp-server",
+  "version": "1.0.1",
+  "description": "WCAG 2.2 accessibility rules as an MCP server for AI coding agents",
+  "type": "module",
+  "main": "index.mjs",
+  "files": [
+    "index.mjs",
+    "data/checklist.json",
+    "README.md"
+  ],
+  "bin": {
+    "a11y-mcp": "index.mjs"
+  },
+  "keywords": [
+    "accessibility",
+    "wcag",
+    "a11y",
+    "mcp",
+    "claude",
+    "cursor"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1"
+  }
+}

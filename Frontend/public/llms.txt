@@ -1,0 +1,136 @@
+# A11Y Project Checklist — WCAG 2.2 Rules for AI Agents
+# Source: https://a11yproject.com/checklist/
+# Version: 1.0.0 | Standard: WCAG 2.2
+
+> When generating HTML, JSX, or any web component, you MUST follow every
+> Level A rule below. Level AA rules are required for production apps.
+> Level AAA rules are recommended.
+
+---
+
+## CONTENT
+
+- [A] 1.3.1 | descriptive-link-text | Button, <a>, and <label> content must be unique and descriptive. Never use "click here", "read more", or "learn more" alone.
+- [AAA] 3.1.5 | use-plain-language | Write at an 8th-grade reading level. Avoid idioms and jargon.
+- [AAA] 1.4.8 | text-alignment | Use left-aligned text for LTR languages. Never justify body text.
+
+## GLOBAL CODE
+
+- [A*] 4.1.1 | validate-html | Write valid HTML. No unclosed tags, duplicate IDs, or invalid nesting. (*Obsolete in WCAG 2.2 but still best practice.)
+- [A] 3.1.1 | lang-attribute | Always include lang attribute on <html>. Example: <html lang="en">
+- [A] 2.4.2 | unique-page-title | Every page/view must have a unique <title> element.
+- [AA] 1.4.4 | viewport-zoom-enabled | Never use maximum-scale=1 or user-scalable=no in viewport meta.
+- [A] 4.1.2 | landmark-elements | Use <header>, <nav>, <main>, <footer>, <aside> — not <div> for layout regions.
+- [A] 2.4.3 | linear-content-flow | Never use tabindex values other than 0 or -1.
+- [A] 2.4.3 | no-autofocus | Never use the autofocus attribute on inputs.
+- [A] 2.2.1 | extend-session-timeouts | Any session timeout must show a visible warning with option to extend.
+- [A] 4.1.2 | no-title-tooltips | Never use the title attribute as the only label for an element.
+
+## KEYBOARD
+
+- [AA] 2.4.7 | visible-focus-style | Never set outline:none or outline:0 on interactive elements without providing a custom visible focus style.
+- [A] 1.3.2 | focus-order-matches-visual | Tab order must match visual reading order. Never use CSS order property to create a mismatch.
+- [A] 2.4.3 | remove-invisible-focusable | Elements hidden off-screen (menus, modals) must use hidden, inert, or display:none — not just transform or opacity.
+
+## IMAGES
+
+- [A] 1.1.1 | img-has-alt | Every <img> must have an alt attribute. ALWAYS.
+- [A] 1.1.1 | decorative-img-empty-alt | Decorative images must use alt="" and role="presentation".
+- [A] 1.1.1 | complex-image-text-alt | Charts, graphs, and maps must have a <figcaption> or linked data table.
+- [A] 1.1.1 | text-in-image-alt | Alt text for images containing text must include that exact text (e.g. FedEx logo → alt="FedEx").
+
+## HEADINGS
+
+- [AA] 2.4.6 | headings-introduce-content | Use <h1>–<h6> for headings. Never use <p> or <div> styled to look like headings.
+- [AA] 2.4.6 | single-h1 | Only one <h1> per page.
+- [AA] 2.4.6 | headings-logical-sequence | Heading levels must follow logical order: h1 → h2 → h3. Never jump levels.
+- [AA] 2.4.6 | no-skipped-headings | Never skip a heading level (e.g. h2 directly to h4).
+
+## LISTS
+
+- [A] 1.3.1 | use-list-elements | Use <ul>, <ol>, or <dl> for all list content. Never fake lists with <br> or bullet characters.
+
+## CONTROLS
+
+- [A] 1.3.1 | a-element-for-links | Use <a href="..."> for navigation. Never use <span> or <div> with onClick for links.
+- [A] 1.4.1 | links-recognizable | Links must be distinguishable from body text by more than color alone (e.g. underline).
+- [AA] 2.4.7 | controls-focus-states | All interactive controls must have a visible :focus or :focus-visible style.
+- [A] 1.3.1 | button-element-for-buttons | Use <button> for all clickable actions. Never use <div role="button"> unless you also add tabIndex={0} and keyboard handlers for Enter and Space.
+- [A] 2.4.1 | skip-link | Every page must have a skip link as the first focusable element: <a href="#main" class="sr-only focus:not-sr-only">Skip to main content</a>
+- [Technique] G201 | new-tab-warning | Links opening in a new tab must warn the user. Use: target="_blank" rel="noopener noreferrer" + <span class="sr-only">(opens in new tab)</span> or a visible icon.
+
+## TABLES
+
+- [A] 1.3.1 | use-table-element | Use <table> for tabular data. Never use CSS Grid or <div> to fake a data table.
+- [A*] 4.1.1 | th-with-scope | Table headers must use <th scope="col"> or <th scope="row">. (*Obsolete in WCAG 2.2 but still required practice.)
+- [AA] 2.4.6 | table-caption | Every data table must have a <caption> element.
+
+## FORMS
+
+- [A] 3.2.2 | inputs-have-labels | Every input must have an associated <label> using htmlFor/id pairing. Never rely on placeholder alone.
+- [A] 1.3.1 | fieldset-legend | Group related inputs (radio, checkbox) in <fieldset> with a <legend>.
+- [AA] 1.3.5 | inputs-autocomplete | Personal data inputs must have autocomplete attribute (e.g. autocomplete="email", "given-name", "postal-code").
+- [A] 3.3.1 | error-summary-list | On form submit failure, show an error summary above the form with role="alert" and links to each invalid field.
+- [A] 3.3.1 | error-aria-describedby | Associate error messages with inputs using aria-invalid="true" and aria-describedby="error-id".
+- [A] 1.4.1 | state-not-color-only | Error, warning, and success states must use icons or text labels — not color alone.
+
+## MEDIA
+
+- [A] 1.4.2 | no-autoplay | Never autoplay audio or video. Always use controls and preload="none".
+- [A] 1.3.1 | media-controls-markup | Media controls must use semantic HTML: <button> for mute/play, <input type="range"> for volume.
+- [A] 2.1.1 | media-pausable | All moving or auto-updating content must be pausable by the user.
+
+## VIDEO
+
+- [A] 1.2.2 | captions-present | All prerecorded video must have captions via <track kind="captions">.
+- [A] 2.3.1 | no-seizure-triggers | Never produce content that flashes more than 3 times per second.
+
+## AUDIO
+
+- [A] 1.1.1 | audio-transcripts | All audio content must have a text transcript available on the same page.
+
+## APPEARANCE
+
+- [A] 1.4.1 | specialized-browsing-modes | Interactive elements must remain visible in Windows High Contrast Mode. Use border:1px solid currentColor as fallback.
+- [AA] 1.4.4 | text-resize-200 | Layout must not break or clip content when text is scaled to 200%.
+- [A] 1.3.3 | proximity-maintained | Labels must be visually close to the inputs they describe.
+- [A] 1.4.1 | color-not-only-cue | Never use color alone to convey state or information.
+- [A] 1.3.3 | instructions-multimodal | Instructions must name the element they refer to, not just its appearance ("Click the Submit button" not "Click the green button").
+- [AA] 1.4.10 | simple-layout | Layout must reflow to a single column at 320px width without horizontal scrolling.
+
+## ANIMATION
+
+- [A] 2.3.1 | subtle-animations | Animations must not flash more than 3 times/sec.
+- [A] 2.2.2 | pause-bg-video | Background video must have a pause control.
+- [AAA] 2.3.3 | prefers-reduced-motion | All CSS animations must respect: @media (prefers-reduced-motion: reduce) { * { animation: none; transition: none; } }
+
+## COLOR CONTRAST
+
+- [AA] 1.4.3 | contrast-normal-text | Normal text (<18px or <14px bold) must have ≥4.5:1 contrast ratio.
+- [AA] 1.4.3 | contrast-large-text | Large text (≥18px or ≥14px bold) must have ≥3:1 contrast ratio.
+- [AA] 1.4.11 | contrast-icons | UI icons must have ≥3:1 contrast against their background.
+- [AA] 1.4.11 | contrast-input-borders | Input borders must have ≥3:1 contrast against the page background.
+- [AA] 1.4.3 | contrast-text-on-image | Text overlaid on images must meet contrast minimums. Use a solid or semi-transparent scrim.
+- [AA] 1.4.3 | selection-contrast | Custom ::selection styles must maintain ≥4.5:1 contrast.
+
+## MOBILE AND TOUCH
+
+- [AA] 1.3.4 | orientation-rotation | Never lock orientation. Content must work in both portrait and landscape.
+- [AA] 1.4.10 | no-horizontal-scroll | No horizontal scrolling at 320px viewport width.
+- [AAA] 2.5.5 | large-touch-targets | Touch targets must be ≥44×44px with adequate spacing between them.
+- [A] 2.4.1 | interactive-spacing | Interactive elements must have enough spacing between them for users with motor impairments to scroll past them.
+
+---
+
+## QUICK REFERENCE: MOST COMMON VIOLATIONS
+
+1. <img> with no alt attribute
+2. <input> with no <label>
+3. <div> or <span> used as a button or link
+4. outline:none on focused elements
+5. Color as the only error indicator
+6. Missing lang attribute on <html>
+7. Text below 4.5:1 contrast ratio
+8. maximum-scale=1 in viewport meta
+9. No skip link
+10. autoplay on audio or video

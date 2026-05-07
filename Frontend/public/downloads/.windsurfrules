@@ -1,0 +1,32 @@
+# WCAG 2.2 Accessibility Rules
+# Applied automatically to all code generation
+
+ALWAYS:
+- Add alt attribute to every <img>
+- Associate every <input> with a <label> via htmlFor/id
+- Use <button> for buttons, <a href> for links
+- Maintain 4.5:1 contrast for normal text, 3:1 for large text
+- Provide visible focus styles (never just outline:none)
+- Use semantic HTML: <header> <nav> <main> <footer> <aside>
+- Use <h1>-<h6> for headings — never styled divs
+- Use <ul> <ol> <dl> for lists
+- Add <caption> to data tables
+- Add <th scope="col|row"> to table headers
+- Add prefers-reduced-motion guard to all animations
+- Add role="alert" to error messages
+- Add aria-invalid and aria-describedby to invalid form fields
+- Add skip link as first focusable element on every page
+
+NEVER:
+- Use color as the only way to show state
+- Use maximum-scale=1 or user-scalable=no in viewport
+- Use outline:none without a replacement focus style
+- Use tabindex values other than 0 or -1
+- Use autofocus
+- Use autoplay on audio or video
+- Use <div> or <span> as buttons or links without full ARIA + keyboard support
+- Skip heading levels
+- Use more than one <h1> per page
+- Use the title attribute as the only tooltip
+
+Reference: /api/checklist.json
