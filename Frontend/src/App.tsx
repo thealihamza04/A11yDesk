@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { CHECKLIST, CATEGORIES } from './data/checklist';
+import { CHECKLIST, CATEGORIES } from './data/index';
 import { ChecklistItemCard } from './components/ChecklistItemCard';
 import { Sidebar, ProgressBar } from './components/Sidebar';
 import AIAgentsPage from './pages/AIAgentsPage';
