@@ -33,44 +33,44 @@
   "items": [
     {
       "id": "use-plain-language",
-      "title": "Use plain language and avoid figures of speech, idioms, and",
+      "title": "Use plain language and avoid figures of speech, idioms, and complicated language",
       "category": "content",
       "wcag": "3.1.5",
       "wcagTitle": "Reading Level",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/reading-level.html",
       "level": "AAA",
       "obsolete": false,
-      "description": "Write at an 8th-grade reading level. Avoid",
+      "description": "Write at an 8th-grade reading level. Avoid jargon, idioms, and unnecessarily complex vocabulary.",
       "whyItMatters": "Plain language reduces cognitive load, benefiting users with cognitive disabilities, non-native speakers, and readers who are stressed or multi-tasking.",
       "bad": "<p>It's a no-brainer that we'll move the needle and circle back once\nwe've boiled the ocean on this synergistic, paradigm-shifting deliverable.</p>",
       "good": "<p>This is a simple choice. We'll work on it together and update\nyou next week.</p>"
     },
     {
       "id": "descriptive-link-text",
-      "title": "Make sure that button , a , and label element content is unique",
+      "title": "Make sure that button, a, and label element content is unique and descriptive",
       "category": "content",
       "wcag": "1.3.1",
       "wcagTitle": "Info and Relationships",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
       "level": "A",
       "obsolete": false,
-      "description": "Button, <a>, and <label> content must be",
+      "description": "Button, <a>, and <label> content must be unique and descriptive enough to make sense out of context.",
       "whyItMatters": "Descriptive link text provides context to keyboard and screen reader users, allowing them to browse a list of links without needing to read the surrounding text.",
-      "bad": "Three identical links: <a href=\"#\">Read more</a> \u00b7 <a href=\"#\">Click\nhere</a> \u00b7 <a href=\"#\">Learn more</a>",
+      "bad": "Three identical links: <a href=\"#\">Read more</a> · <a href=\"#\">Click\nhere</a> · <a href=\"#\">Learn more</a>",
       "good": "<a href=\"#\">Read the 2025 accessibility report</a> , <a\nhref=\"#\">Download the WCAG quick-reference PDF</a> , <a href=\"#\">View pricing\nfor the Pro plan</a>"
     },
     {
       "id": "text-alignment",
-      "title": "Use left-aligned text for left-to-right (LTR) languages, and right-aligned",
+      "title": "Use left-aligned text for left-to-right (LTR) languages, and right-aligned text for right-to-left (RTL) languages",
       "category": "content",
       "wcag": "1.4.8",
       "wcagTitle": "Visual Presentation",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html",
       "level": "AAA",
       "obsolete": false,
-      "description": "Use left-aligned text for LTR languages. Never",
+      "description": "Use left-aligned text for LTR languages. Never use justified or centered body text.",
       "whyItMatters": "Justified or centered body text is highly difficult to read for people with reading disabilities like dyslexia, as it creates uneven spacing and visual rivers of white space.",
-      "bad": "<p className=\"text-justify\">{4-sentence Lorem ipsum}</p> \u2014 rivers of\nwhitespace visible.",
+      "bad": "<p className=\"text-justify\">{4-sentence Lorem ipsum}</p> — rivers of\nwhitespace visible.",
       "good": "<p className=\"text-left\">{same text}</p>"
     },
     {
@@ -82,9 +82,9 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/parsing.html",
       "level": "A",
       "obsolete": true,
-      "description": "Write valid HTML. No unclosed tags, duplicate IDs,",
+      "description": "Write valid HTML. No unclosed tags, duplicate IDs, or malformed nesting.",
       "whyItMatters": "Valid HTML guarantees that assistive technologies can parse and navigate the page's DOM tree reliably and consistently across all standard browsers.",
-      "bad": "<p>Hello <strong>world</p></strong> <div><li>orphan</li></div> \u2014 render\nvia dangerouslySetInnerHTML so the malformed structure persists.",
+      "bad": "<p>Hello <strong>world</p></strong> <div><li>orphan</li></div> — render\nvia dangerouslySetInnerHTML so the malformed structure persists.",
       "good": "<p>Hello <strong>world</strong></p><ul><li>list item</li></ul>"
     },
     {
@@ -96,7 +96,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/language-of-page.html",
       "level": "A",
       "obsolete": false,
-      "description": "Always include lang attribute on <html>. Example:",
+      "description": "Always include a lang attribute on the <html> element, e.g., <html lang=\"en\">.",
       "whyItMatters": "The lang attribute allows screen readers to choose the correct voice engine, phonetic profiles, and pronunciation rules to announce content accurately.",
       "bad": "<pre>&lt;html&gt;</pre> block showing missing lang.",
       "good": "<pre>&lt;html lang=\"en\"&gt;</pre>"
@@ -110,10 +110,10 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html",
       "level": "A",
       "obsolete": false,
-      "description": "Every page/view must have a unique <title>",
+      "description": "Every page/view must have a unique <title> element that describes its content.",
       "whyItMatters": "Page titles are the first things announced by screen readers when navigating. They allow users to quickly identify if they have reached their desired destination.",
       "bad": "Mock browser tab bar with three tabs all reading \"Untitled\".",
-      "good": "Three tabs reading \"Pricing \u2014 Acme\", \"Contact \u2014 Acme\", \"Docs \u2014 Acme\"."
+      "good": "Three tabs reading \"Pricing — Acme\", \"Contact — Acme\", \"Docs — Acme\"."
     },
     {
       "id": "viewport-zoom-enabled",
@@ -124,23 +124,23 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Never use maximum-scale=1 or userscalable=no in viewport meta.",
+      "description": "Never use maximum-scale=1 or user-scalable=no in the viewport meta tag.",
       "whyItMatters": "Disabling viewport scaling locks out visually impaired users who depend on browser or mobile zoom to read small text and interact with layouts.",
       "bad": "<pre>&lt;meta name=\"viewport\" content=\"width=device-width, initialscale=1, maximum-scale=1, user-scalable=no\"&gt;</pre> .",
       "good": "<pre>&lt;meta name=\"viewport\" content=\"width=device-width, initialscale=1\"&gt;</pre>"
     },
     {
       "id": "landmark-elements",
-      "title": "Use landmark elements to indicate important content regions. WCAG",
+      "title": "Use landmark elements to indicate important content regions",
       "category": "global-code",
       "wcag": "4.1.2",
       "wcagTitle": "Name, Role, Value",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
       "level": "A",
       "obsolete": false,
-      "description": "Use <header>, <nav>, <main>, <footer>, <aside> \u2014",
+      "description": "Use <header>, <nav>, <main>, <footer>, and <aside> to structure page regions semantically.",
       "whyItMatters": "Landmark elements (header, nav, main, footer) allow screen reader users to skip directly to major layout regions, bypassing repetitive content.",
-      "bad": "<div class=\"header\">\u2026</div><div class=\"nav\">\u2026</div><div class=\"main\">\u2026\n</div> rendered as a visual mockup with <div> labels.",
+      "bad": "<div class=\"header\">…</div><div class=\"nav\">…</div><div class=\"main\">…\n</div> rendered as a visual mockup with <div> labels.",
       "good": "Same mockup using <header> , <nav> , <main> , <footer>"
     },
     {
@@ -180,9 +180,9 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html",
       "level": "A",
       "obsolete": false,
-      "description": "Any session timeout must show a visible",
+      "description": "Any session timeout must show a visible warning and offer a way to extend the session.",
       "whyItMatters": "People with motor, reading, or cognitive difficulties need more time to complete actions. Warn them before logging out so they do not lose progress.",
-      "bad": "Panel showing \"You will be logged out in 0:14 \u2026\" countdown and no controls.",
+      "bad": "Panel showing \"You will be logged out in 0:14 …\" countdown and no controls.",
       "good": "Same countdown plus a \"Need more time? Extend session (+15 min)\" button."
     },
     {
@@ -194,37 +194,37 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
       "level": "A",
       "obsolete": false,
-      "description": "Never use the title attribute as the only label",
+      "description": "Never use the title attribute as the only label for interactive elements.",
       "whyItMatters": "The title attribute tooltip is inaccessible to keyboard-only and mobile touch users. Important label text must be visible or accessible via screen readers.",
       "bad": "<button title=\"Save your work\"> </button> (icon-only, info hidden in title ).",
       "good": "<button><Save aria-hidden=\"true\"/> <span>Save</span></button> with visible\nlabel, or visually-hidden text via sr-only class."
     },
     {
       "id": "visible-focus-style",
-      "title": "Make sure there is a visible focus style for interactive elements that",
+      "title": "Make sure there is a visible focus style for interactive elements",
       "category": "keyboard",
       "wcag": "2.4.7",
       "wcagTitle": "Focus Visible",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Never set outline:none or outline:0 on",
+      "description": "Never set outline:none or outline:0 on interactive elements.",
       "whyItMatters": "Visible focus indicators are like a mouse cursor for keyboard users. Removing them makes it impossible to know which button or input has active focus.",
-      "bad": "<button className=\"focus:outline-none\">\u2026</button> plus a CSS outline:none\nrule.",
-      "good": "<button className=\"focus-visible:outline focus-visible:outline-2 focusvisible:outline-offset-2 focus-visible:outline-blue-600\">\u2026</button>"
+      "bad": "<button className=\"focus:outline-none\">…</button> plus a CSS outline:none\nrule.",
+      "good": "<button className=\"focus-visible:outline focus-visible:outline-2 focusvisible:outline-offset-2 focus-visible:outline-blue-600\">…</button>"
     },
     {
       "id": "focus-order-matches-visual",
-      "title": "Check to see that keyboard focus order matches the visual",
+      "title": "Check to see that keyboard focus order matches the visual layout",
       "category": "keyboard",
       "wcag": "1.3.2",
       "wcagTitle": "Meaningful Sequence",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html",
       "level": "A",
       "obsolete": false,
-      "description": "Tab order must match visual reading",
+      "description": "Tab order must match visual reading order.",
       "whyItMatters": "When visual layout and tabbing order do not align, keyboard users will tab to unexpected regions, causing severe confusion and disorientation.",
-      "bad": "A two-column grid where DOM order is [Right1, Left1, Right2, Left2] (use\nTailwind order- utilities) so Tab jumps right\u2192left.",
+      "bad": "A two-column grid where DOM order is [Right1, Left1, Right2, Left2] (use\nTailwind order- utilities) so Tab jumps right→left.",
       "good": "Same visual but DOM order matches reading order."
     },
     {
@@ -236,7 +236,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html",
       "level": "A",
       "obsolete": false,
-      "description": "Elements hidden off-screen (menus,",
+      "description": "Elements hidden off-screen (menus, drawers) must not receive keyboard focus.",
       "whyItMatters": "If interactive controls hidden off-screen (like hamburger menus) can still receive keyboard focus, users get trapped in a hidden, confusing tab loop.",
       "bad": "Off-screen menu hidden by transform: translateX(-9999px) but still in tab order.",
       "good": "Same menu hidden with hidden attribute or inert , so Tab skips it."
@@ -252,19 +252,19 @@
       "obsolete": false,
       "description": "Every <img> must have an alt attribute.",
       "whyItMatters": "Screen readers read alt text aloud to visually impaired users. Without alt text, the browser reads the file name, which is unhelpful and confusing.",
-      "bad": "<img src=\"/cat.jpg\"> (no alt \u2014 screen reader will announce the filename).",
+      "bad": "<img src=\"/cat.jpg\"> (no alt — screen reader will announce the filename).",
       "good": "<img src=\"/cat.jpg\" alt=\"A ginger tabby cat sitting on a sunlit\nwindowsill\">"
     },
     {
       "id": "decorative-img-empty-alt",
-      "title": "Make sure that decorative images use null alt (empty)",
+      "title": "Make sure that decorative images use null alt (empty string)",
       "category": "images",
       "wcag": "1.1.1",
       "wcagTitle": "Non-text Content",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html",
       "level": "A",
       "obsolete": false,
-      "description": "Decorative images must use alt=\"\" and",
+      "description": "Decorative images must use alt=\"\" and role=\"presentation\" to be ignored by screen readers.",
       "whyItMatters": "Empty alt attributes (alt=\"\") signal to screen readers that an image is decorative and should be skipped entirely, reducing verbal noise.",
       "bad": "<img src=\"divider.svg\" alt=\"decorative line divider image png\"> between\ntwo paragraphs.",
       "good": "Same divider with alt=\"\" and role=\"presentation\""
@@ -278,21 +278,21 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html",
       "level": "A",
       "obsolete": false,
-      "description": "Charts, graphs, and maps must have a",
+      "description": "Charts, graphs, and maps must have a text alternative or accompanying data table.",
       "whyItMatters": "Complex visual data like charts, maps, and infographics cannot be summarized in a simple sentence. Providing a structured data table ensures full accessibility.",
       "bad": "A bar-chart <svg> with <img alt=\"chart\"> only.",
       "good": "Same chart inside <figure> ; below it a <figcaption> plus a <table> with the\nunderlying data."
     },
     {
       "id": "text-in-image-alt",
-      "title": "For images containing text, make sure the alt description includes the",
+      "title": "For images containing text, make sure the alt description includes the image text",
       "category": "images",
       "wcag": "1.1.1",
       "wcagTitle": "Non-text Content",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html",
       "level": "A",
       "obsolete": false,
-      "description": "Alt text for images containing text must include",
+      "description": "Alt text for images containing text must include the image's text verbatim.",
       "whyItMatters": "Any text embedded within an image is completely invisible to screen readers, translation tools, and text-resizing tools unless reproduced in the alt description.",
       "bad": "<img src=\"logo-fedex.png\" alt=\"company logo\"> .",
       "good": "<img src=\"logo-fedex.png\" alt=\"FedEx\">"
@@ -306,7 +306,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/headings-or-labels.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Use <h1>\u2013<h6> for headings. Never use",
+      "description": "Use <h1>–<h6> for headings. Never use styled paragraphs or divs as visual headings.",
       "whyItMatters": "Proper heading elements organize content semantically, allowing screen reader users to navigate the document structure easily and skip directly to sections.",
       "bad": "<p className=\"text-2xl font-bold\">Pricing</p> (visually a heading,\nsemantically a paragraph).",
       "good": "<h2 className=\"text-2xl font-bold\">Pricing</h2>"
@@ -334,10 +334,10 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/headings-or-labels.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Heading levels must follow logical",
+      "description": "Heading levels must follow logical nesting order.",
       "whyItMatters": "Consistent, descending heading levels (H1, H2, H3) provide a clear outline that maps the logical relationships between page topics.",
-      "bad": "<h1> \u2192 <h4> \u2192 <h2> \u2192 <h6> displayed in the demo as an outline tree with red flags\non out-of-order nodes.",
-      "good": "<h1> \u2192 <h2> \u2192 <h3> \u2192 <h2> with green check tree."
+      "bad": "<h1> → <h4> → <h2> → <h6> displayed in the demo as an outline tree with red flags\non out-of-order nodes.",
+      "good": "<h1> → <h2> → <h3> → <h2> with green check tree."
     },
     {
       "id": "no-skipped-headings",
@@ -348,14 +348,14 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/headings-or-labels.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Never skip a heading level (e.g. h2 directly",
+      "description": "Never skip a heading level (e.g. h2 directly to h4).",
       "whyItMatters": "Skipping heading levels (like jumping from H2 directly to H4) implies missing sections, confusing screen reader users who navigate by heading outline.",
       "bad": "<h2> directly followed by <h4> .",
-      "good": "<h2> \u2192 <h3> \u2192 <h4>"
+      "good": "<h2> → <h3> → <h4>"
     },
     {
       "id": "use-list-elements",
-      "title": "Use list elements ( ol , ul , and dl elements) for list content. WCAG",
+      "title": "Use list elements (ol, ul, and dl) for list content",
       "category": "lists",
       "wcag": "1.3.1",
       "wcagTitle": "Info and Relationships",
@@ -364,7 +364,7 @@
       "obsolete": false,
       "description": "Use <ul>, <ol>, or <dl> for all list content.",
       "whyItMatters": "Semantic lists inform assistive technology of grouped items and the total count of items, helping users mentally structure the content.",
-      "bad": "<div>\u2022 Apples<br/>\u2022 Pears<br/>\u2022 Plums</div> .",
+      "bad": "<div>• Apples<br/>• Pears<br/>• Plums</div> .",
       "good": "<ul><li>Apples</li><li>Pears</li><li>Plums</li></ul>"
     },
     {
@@ -376,7 +376,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
       "level": "A",
       "obsolete": false,
-      "description": "Use <a href=\"...\"> for navigation. Never use",
+      "description": "Use <a href=\"...\"> for navigation. Never use div or span elements as links.",
       "whyItMatters": "Links are built for navigation. Standard anchor tags provide essential keyboard features like Enter activation, status bar hover, and history tracking.",
       "bad": "<span onClick={() => navigate('/x')} className=\"text-blue-600 underline\ncursor-pointer\">Pricing</span> .",
       "good": "<a href=\"/x\">Pricing</a>"
@@ -390,7 +390,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
       "level": "A",
       "obsolete": false,
-      "description": "Links must be distinguishable from body text by",
+      "description": "Links must be distinguishable from body text by more than color alone.",
       "whyItMatters": "People with low vision or colorblindness cannot distinguish links from standard text if color is the only cue. Underlines ensure they stand out visually.",
       "bad": "A paragraph where links are colored blue but have no underline; toggle the demo to\ngrayscale to show they vanish.",
       "good": "Same paragraph where links are colored AND underlined."
@@ -404,7 +404,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
       "level": "AA",
       "obsolete": false,
-      "description": "All interactive controls must have a",
+      "description": "All interactive controls must have a visible :focus style.",
       "whyItMatters": "A clear, prominent focus indicator is vital for keyboard navigation, allowing users to know exactly where they are on the page.",
       "bad": "Three buttons with outline-none .",
       "good": "Three buttons with visible focus-visible:ring-2 ring-blue-600 ring-offset-2"
@@ -420,8 +420,8 @@
       "obsolete": false,
       "description": "Use <button> for all clickable actions.",
       "whyItMatters": "Standard buttons provide built-in Space and Enter activation. Faking buttons with div elements locks out keyboard-only and screen reader users.",
-      "bad": "<div role=\"button\" onClick={\u2026}>Submit</div> (no Enter/Space activation, not in\ntab order without tabindex).",
-      "good": "<button type=\"button\" onClick={\u2026}>Submit</button>"
+      "bad": "<div role=\"button\" onClick={…}>Submit</div> (no Enter/Space activation, not in\ntab order without tabindex).",
+      "good": "<button type=\"button\" onClick={…}>Submit</button>"
     },
     {
       "id": "skip-link",
@@ -432,21 +432,21 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html",
       "level": "A",
       "obsolete": false,
-      "description": "Every page must have a skip link as the first focusable",
+      "description": "Every page must have a skip link as the first focusable element.",
       "whyItMatters": "Skip links allow keyboard-only and screen reader users to bypass long header navigation lists and jump directly to the primary page content.",
       "bad": "Mock page with no skip link; tabbing forces user through 30 nav items.",
       "good": "First focusable element: <a href=\"#main\" className=\"sr-only focus:not-sronly focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-blue-600 text-white\npx-3 py-2 rounded\">Skip to main content</a>"
     },
     {
       "id": "new-tab-warning",
-      "title": "Identify links that open in a new tab or window. G201 \u2014 Technique (no",
+      "title": "Identify links that open in a new tab or window",
       "category": "controls",
       "wcag": "G201",
       "wcagTitle": "Give users a choice of whether to open links in a new window/tab",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Techniques/general/G201.html",
       "level": "Technique",
       "obsolete": false,
-      "description": "Links opening in a new tab must warn the",
+      "description": "Links opening in a new tab must warn the user, e.g. with an icon and screen-reader text.",
       "whyItMatters": "Opening a new tab without warning can disorient screen reader and low-vision users who might not realize the browser focus has moved to a new window.",
       "bad": "<a href=\"https://x.com\" target=\"_blank\">Read more</a> .",
       "good": "<a href=\"https://x.com\" target=\"_blank\" rel=\"noopener noreferrer\">Read\nmore <ExternalLink aria-hidden=\"true\" className=\"inline h-3 w-3\"/> <span\nclassName=\"sr-only\">(opens in new tab)</span></a>"
@@ -460,21 +460,21 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
       "level": "A",
       "obsolete": false,
-      "description": "Use <table> for tabular data. Never use CSS Grid",
+      "description": "Use <table> for tabular data. Never use CSS Grid or div layouts for structured data.",
       "whyItMatters": "Semantic tables expose columns, rows, and cells to screen readers, allowing users to navigate and understand complex data points systematically.",
       "bad": "A grid built from CSS Grid with <div> cells.",
-      "good": "Same data in <table><thead><tr><th>\u2026</th></tr></thead><tbody>\u2026</tbody>\n</table>"
+      "good": "Same data in <table><thead><tr><th>…</th></tr></thead><tbody>…</tbody>\n</table>"
     },
     {
       "id": "th-with-scope",
-      "title": "Use the th element for table headers (with appropriate scope",
+      "title": "Use the th element for table headers (with appropriate scope attribute)",
       "category": "tables",
       "wcag": "4.1.1",
       "wcagTitle": "Parsing",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/parsing.html",
       "level": "A",
       "obsolete": true,
-      "description": "Table headers must use <th scope=\"col\"> or <th",
+      "description": "Table headers must use <th scope=\"col\"> or <th scope=\"row\">.",
       "whyItMatters": "The scope attribute explicitly connects header cells to their corresponding data rows or columns, ensuring correct reading order in grid structures.",
       "bad": "Table where the header row uses <td> cells.",
       "good": "Table with <th scope=\"col\"> on column headers and <th scope=\"row\"> on row\nheaders."
@@ -491,7 +491,7 @@
       "description": "Every data table must have a <caption> element.",
       "whyItMatters": "A table caption acts as a visible heading for the table, giving assistive technology users instant context about the table data before reading it cell by cell.",
       "bad": "Table with a <h3> above it acting as title.",
-      "good": "<table><caption>Q3 2025 sales by region</caption>\u2026</table>"
+      "good": "<table><caption>Q3 2025 sales by region</caption>…</table>"
     },
     {
       "id": "inputs-have-labels",
@@ -502,7 +502,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/on-input.html",
       "level": "A",
       "obsolete": false,
-      "description": "Every input must have an associated <label>",
+      "description": "Every input must have an associated <label> element.",
       "whyItMatters": "Labels provide persistent descriptions. They stay visible when typing and are read automatically by screen readers when focusing on an input field.",
       "bad": "<input placeholder=\"Email\"/> only.",
       "good": "<label htmlFor=\"email\">Email</label><input id=\"email\" type=\"email\"/>"
@@ -516,10 +516,10 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
       "level": "A",
       "obsolete": false,
-      "description": "Group related inputs (radio, checkbox) in",
+      "description": "Group related inputs (radio, checkbox) in a <fieldset> with a <legend>.",
       "whyItMatters": "Fieldset and legend elements group related options, such as radio groups or address forms, providing essential shared context for screen reader users.",
       "bad": "Group of three radio buttons with a <p> \"Shipping speed\" above them.",
-      "good": "<fieldset><legend>Shipping speed</legend>\u2026three radios\u2026</fieldset>"
+      "good": "<fieldset><legend>Shipping speed</legend>…three radios…</fieldset>"
     },
     {
       "id": "inputs-autocomplete",
@@ -530,52 +530,52 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Personal data inputs must have autocomplete",
+      "description": "Personal data inputs must have autocomplete attributes set to appropriate values.",
       "whyItMatters": "The autocomplete attribute speeds up entry and reduces typing requirements, helping users with motor and cognitive difficulties fill forms easily.",
       "bad": "<input name=\"firstname\"/> with no autocomplete .",
-      "good": "<input name=\"firstname\" autoComplete=\"given-name\"/> plus address fields with\nautoComplete=\"street-address\" , \"postal-code\" , etc. Testparty"
+      "good": "<input name=\"firstname\" autoComplete=\"given-name\"/> plus address fields with\nautoComplete=\"street-address\" , \"postal-code\" , etc."
     },
     {
       "id": "error-summary-list",
-      "title": "Make sure that form input errors are displayed in list above the form",
+      "title": "Make sure that form input errors are displayed in a list above the form",
       "category": "forms",
       "wcag": "3.3.1",
       "wcagTitle": "Error Identification",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html",
       "level": "A",
       "obsolete": false,
-      "description": "On form submit failure, show an error summary",
+      "description": "On form submit failure, show an error summary list above the form.",
       "whyItMatters": "An error summary lists all form issues in one place, focused on submit failure. This allows users to review and navigate to fields needing correction.",
       "bad": "Inline red text under each invalid field, no summary.",
       "good": "<div role=\"alert\" tabIndex={-1}><h3>2 errors</h3><ul><li><a\nhref=\"#email\">Email is required</a></li><li><a href=\"#zip\">ZIP must be 5\ndigits</a></li></ul></div> above the form, focused on submit-fail."
     },
     {
       "id": "error-aria-describedby",
-      "title": "Associate input error messaging with the input it corresponds",
+      "title": "Associate input error messaging with the input it corresponds to",
       "category": "forms",
       "wcag": "3.3.1",
       "wcagTitle": "Error Identification",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html",
       "level": "A",
       "obsolete": false,
-      "description": "Associate error messages with inputs using",
+      "description": "Associate error messages with inputs using aria-describedby.",
       "whyItMatters": "Associating error text with fields using aria-describedby ensures screen readers automatically announce the specific error message when focusing a field.",
       "bad": "<input/><p className=\"text-red-600\">Email is required</p> .",
-      "good": "<input aria-invalid=\"true\" aria-describedby=\"email-err\"/><p id=\"emailerr\" className=\"text-red-600\">Email is required</p> . Testparty"
+      "good": "<input aria-invalid=\"true\" aria-describedby=\"email-err\"/><p id=\"email-err\" className=\"text-red-600\">Email is required</p> ."
     },
     {
       "id": "state-not-color-only",
-      "title": "Make sure that error, warning, and success states are not visually",
+      "title": "Make sure that error, warning, and success states are not conveyed by color alone",
       "category": "forms",
       "wcag": "1.4.1",
       "wcagTitle": "Use of Color",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
       "level": "A",
       "obsolete": false,
-      "description": "Error, warning, and success states must use",
+      "description": "Error, warning, and success states must use icons or text labels in addition to color.",
       "whyItMatters": "Color blind or visually impaired users cannot identify validation states (like red borders) unless supported by clear text labels or descriptive icons.",
       "bad": "Three inputs differentiated only by red/green border.",
-      "good": "Same inputs with <AlertCircle/> / <CheckCircle/> icons + text labels (\"Error: \u2026\",\n\"Success: \u2026\")."
+      "good": "Same inputs with <AlertCircle/> / <CheckCircle/> icons + text labels (\"Error: …\",\n\"Success: …\")."
     },
     {
       "id": "no-autoplay",
@@ -586,7 +586,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/audio-control.html",
       "level": "A",
       "obsolete": false,
-      "description": "Never autoplay audio or video. Always use controls and",
+      "description": "Never autoplay audio or video. Always use controls and let users initiate playback.",
       "whyItMatters": "Autoplay audio can drown out screen reader speech, making it extremely difficult for visually impaired users to find controls to turn it off.",
       "bad": "<audio src=\"/clip.mp3\" autoPlay loop/> (gate behind a \"Run demo\" button so we\ndon't actually autoplay on page load).",
       "good": "<audio src=\"/clip.mp3\" controls preload=\"none\"/>"
@@ -600,10 +600,10 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html",
       "level": "A",
       "obsolete": false,
-      "description": "Media controls must use semantic HTML:",
+      "description": "Media controls must use semantic HTML: <button> for actions, <input type=\"range\"> for sliders.",
       "whyItMatters": "Using standard, keyboard-accessible buttons for custom media players guarantees that all play, pause, and volume controls are fully functional for all users.",
-      "bad": "<div onClick={\u2026}> </div> for mute; <div className=\"slider\">\u2026</div> for\nvolume.",
-      "good": "<button aria-pressed={muted} onClick={\u2026}>{muted?'Unmute':'Mute'}\n</button> ; <input type=\"range\" min=\"0\" max=\"100\" aria-label=\"Volume\"/>"
+      "bad": "<div onClick={…}> </div> for mute; <div className=\"slider\">…</div> for\nvolume.",
+      "good": "<button aria-pressed={muted} onClick={…}>{muted?'Unmute':'Mute'}\n</button> ; <input type=\"range\" min=\"0\" max=\"100\" aria-label=\"Volume\"/>"
     },
     {
       "id": "media-pausable",
@@ -614,7 +614,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html",
       "level": "A",
       "obsolete": false,
-      "description": "All moving or auto-updating content must be",
+      "description": "All moving or auto-updating content must be pausable by the user.",
       "whyItMatters": "Any moving, blinking, or scrolling content must be pausable to avoid triggering seizure issues, distracting users, or blocking assistive technologies.",
       "bad": "A looping <video autoPlay loop muted> with no controls.",
       "good": "Same video with controls and a visible \"Pause all media\" global button."
@@ -628,7 +628,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/captions-prerecorded.html",
       "level": "A",
       "obsolete": false,
-      "description": "All prerecorded video must have captions via",
+      "description": "All prerecorded video must have captions via a <track kind=\"captions\"> element.",
       "whyItMatters": "Captions are essential for deaf or hard-of-hearing users to access verbal dialogue and ambient sounds, while also helping non-native language learners.",
       "bad": "<video src=\"/talk.mp4\" controls/> with no <track> .",
       "good": "<video controls><source src=\"/talk.mp4\"/><track kind=\"captions\"\nsrcLang=\"en\" src=\"/talk.vtt\" default/></video>"
@@ -642,9 +642,9 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html",
       "level": "A",
       "obsolete": false,
-      "description": "Never produce content that flashes more than 3",
+      "description": "Never produce content that flashes more than 3 times per second.",
       "whyItMatters": "Strobe effects and fast flashing lights can trigger epileptic seizures. High-frequency animations must be avoided or strictly gated.",
-      "bad": "Render a STILL image with overlay text \"Imagine this strobing at 5 Hz red/white\"\ngated behind a \"Show simulated bad demo (warning: flashing)\" button with a confirm\ndialog. Do NOT actually exceed 3 flashes/sec on render \u2014 the spec is unambiguous on\nthis.",
+      "bad": "Render a STILL image with overlay text \"Imagine this strobing at 5 Hz red/white\"\ngated behind a \"Show simulated bad demo (warning: flashing)\" button with a confirm\ndialog. Do NOT actually exceed 3 flashes/sec on render.",
       "good": "A subtle 1 Hz pulse with prefers-reduced-motion disabling it entirely."
     },
     {
@@ -656,24 +656,24 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html",
       "level": "A",
       "obsolete": false,
-      "description": "All audio content must have a text transcript",
+      "description": "All audio content must have a text transcript available on the same page.",
       "whyItMatters": "Transcripts provide access to audio content for deaf-blind users, users who prefer reading, and those in noisy environments where audio is impractical.",
       "bad": "<audio controls src=\"/podcast.mp3\"/> alone.",
-      "good": "Same audio + <details><summary>Transcript</summary><div>\u2026full text\u2026</div>\n</details> below."
+      "good": "Same audio + <details><summary>Transcript</summary><div>…full text…</div>\n</details> below."
     },
     {
       "id": "specialized-browsing-modes",
-      "title": "Check your content in specialized browsing modes. WCAG",
+      "title": "Check your content in specialized browsing modes",
       "category": "appearance",
       "wcag": "1.4.1",
       "wcagTitle": "Use of Color",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
       "level": "A",
       "obsolete": false,
-      "description": "Interactive elements must remain",
+      "description": "Interactive elements must remain usable in high contrast mode and forced-colors environments.",
       "whyItMatters": "Using system-color support ensures controls remain fully visible and usable in specialized layouts, such as Windows High Contrast Mode.",
-      "bad": "A button styled with background-image: linear-gradient(...) and no border \u2014\ndisappears in Windows High Contrast Mode.",
-      "good": "Same button with explicit border: 1px solid currentColor and CSS systemcolor fallback ( background-color: ButtonFace; color: ButtonText; )."
+      "bad": "A button styled with background-image: linear-gradient(...) and no border —\ndisappears in Windows High Contrast Mode.",
+      "good": "Same button with explicit border: 1px solid currentColor and CSS system-color fallback ( background-color: ButtonFace; color: ButtonText; )."
     },
     {
       "id": "text-resize-200",
@@ -684,49 +684,49 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Layout must not break or clip content when text",
+      "description": "Layout must not break or clip content when text is scaled to 200%.",
       "whyItMatters": "Visually impaired users often scale browser text to 200%. Layouts must reflow cleanly without cutting off, overlapping, or hiding enlarged text content.",
       "bad": "A card with width: 200px; height: 60px; overflow: hidden so doubled text clips.\nDemo includes a \"Zoom 200%\" toggle.",
       "good": "Same card with min-height and overflow: visible ; doubled text reflows."
     },
     {
       "id": "proximity-maintained",
-      "title": "Double-check that good proximity between content is",
+      "title": "Double-check that good proximity between content is maintained",
       "category": "appearance",
       "wcag": "1.3.3",
       "wcagTitle": "Sensory Characteristics",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html",
       "level": "A",
       "obsolete": false,
-      "description": "Labels must be visually close to the inputs",
+      "description": "Labels must be visually close to the inputs they describe.",
       "whyItMatters": "Placing labels or related descriptions far away from inputs disorients screen magnifier users, who can only view a small portion of the screen at once.",
       "bad": "A label on the far left and its input on the far right of a wide row.",
       "good": "Label sits directly above its input."
     },
     {
       "id": "color-not-only-cue",
-      "title": "Make sure color isn't the only way information is conveyed. WCAG",
+      "title": "Make sure color isn't the only way information is conveyed",
       "category": "appearance",
       "wcag": "1.4.1",
       "wcagTitle": "Use of Color",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
       "level": "A",
       "obsolete": false,
-      "description": "Never use color alone to convey state or",
+      "description": "Never use color alone to convey state or meaning.",
       "whyItMatters": "Relying on color alone to convey details (like active pages or statuses) locks out users with color blindness, low vision, or monochrome monitors.",
       "bad": "A list of files where \"errors\" are red and \"passing\" are green, no other indicator.",
       "good": "Same list with <XCircle/> / <CheckCircle/> icons and \"Error\" / \"Passing\" text\nlabels."
     },
     {
       "id": "instructions-multimodal",
-      "title": "Make sure instructions are not visual or audio-only. WCAG",
+      "title": "Make sure instructions are not visual or audio-only",
       "category": "appearance",
       "wcag": "1.3.3",
       "wcagTitle": "Sensory Characteristics",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html",
       "level": "A",
       "obsolete": false,
-      "description": "Instructions must name the element they",
+      "description": "Instructions must name the element they refer to, not just its position or appearance.",
       "whyItMatters": "Instructions must not rely on single sensory indicators (like 'click the red circle' or 'the button on the right') which are useless to blind users.",
       "bad": "<p>Click the green button on the right to continue.</p> .",
       "good": "<p>Click the green \"Continue\" button to proceed.</p> (names the element)."
@@ -740,7 +740,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Layout must reflow to a single column at 320px",
+      "description": "Layout must reflow to a single column at 320px without horizontal scrolling.",
       "whyItMatters": "Clean, logical, single-column reflow patterns ensure readability and ease of interaction across various screen widths and device magnifiers.",
       "bad": "A demo with floating sidebars, overlapping cards, three nav bars.",
       "good": "Clean single-column with one nav, one main, one footer."
@@ -754,9 +754,9 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold.html",
       "level": "A",
       "obsolete": false,
-      "description": "Animations must not flash more than 3 times/sec.",
+      "description": "Animations must not flash more than 3 times per second.",
       "whyItMatters": "Loud, flashing, or fast-scaling animations can trigger visual vertigo, nausea, and severe distraction in users with vestibular disorders.",
-      "bad": "A box that scales 0.5\u21922.0 and shakes 10\u00b0/100ms.",
+      "bad": "A box that scales 0.5→2.0 and shakes 10°/100ms.",
       "good": "A box with a 200ms ease fade-in."
     },
     {
@@ -775,16 +775,16 @@
     },
     {
       "id": "prefers-reduced-motion",
-      "title": "Make sure all animation obeys the prefers-reduced-motion",
+      "title": "Make sure all animation obeys the prefers-reduced-motion media query",
       "category": "animation",
       "wcag": "2.3.3",
       "wcagTitle": "Animation from Interactions",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
       "level": "AAA",
       "obsolete": false,
-      "description": "All CSS animations must respect: @media",
+      "description": "All CSS animations must respect @media (prefers-reduced-motion: reduce).",
       "whyItMatters": "The prefers-reduced-motion query allows users with vestibular motion sensitivity to disable transitions, parallax effects, and spinning animations.",
-      "bad": "A spinning gear forever \u2014 animation has no media-query guard.",
+      "bad": "A spinning gear forever — animation has no media-query guard.",
       "good": "Same gear with @media (prefers-reduced-motion: reduce) { .gear {\nanimation: none; } }"
     },
     {
@@ -796,10 +796,10 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Normal text (<18px or <14px bold) must have",
+      "description": "Normal text (<18px or <14px bold) must have at least 4.5:1 contrast ratio.",
       "whyItMatters": "Sufficient color contrast (minimum 4.5:1) ensures standard body text is legible for users with moderate low vision, color blindness, or in high-glare setups.",
-      "bad": "<p className=\"text-zinc-400 bg-white\"> (\u22482.5:1).",
-      "good": "<p className=\"text-zinc-900 bg-white\"> (\u224819:1)."
+      "bad": "<p className=\"text-zinc-400 bg-white\"> (≈2.5:1).",
+      "good": "<p className=\"text-zinc-900 bg-white\"> (≈19:1)."
     },
     {
       "id": "contrast-large-text",
@@ -810,7 +810,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Large text (\u226518px or \u226514px bold) must have",
+      "description": "Large text (≥18px or ≥14px bold) must have at least 3:1 contrast ratio.",
       "whyItMatters": "Large text needs a minimum of 3:1 contrast ratio. This standard ensures high legibility while offering creative flexibility for page headers and callouts.",
       "bad": "<h2 className=\"text-3xl text-zinc-300 bg-white\">Heading</h2> .",
       "good": "<h2 className=\"text-3xl text-zinc-700 bg-white\">Heading</h2>"
@@ -824,21 +824,21 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
       "level": "AA",
       "obsolete": false,
-      "description": "UI icons must have \u22653:1 contrast against their",
+      "description": "UI icons must have ≥3:1 contrast against their background.",
       "whyItMatters": "UI controls, status indicators, and descriptive icons must maintain high contrast (3:1) so their functions are clearly recognizable.",
       "bad": "Lucide <Search/> at text-zinc-300 on white.",
       "good": "Same icon at text-zinc-700"
     },
     {
       "id": "contrast-input-borders",
-      "title": "Check the contrast of borders for input elements (text input",
+      "title": "Check the contrast of borders for input elements",
       "category": "color-contrast",
       "wcag": "1.4.11",
       "wcagTitle": "Non-text Contrast",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Input borders must have \u22653:1 contrast",
+      "description": "Input borders must have ≥3:1 contrast against the adjacent background.",
       "whyItMatters": "High-contrast input borders (3:1) allow low-vision and cognitively impaired users to easily locate, outline, and focus form fields.",
       "bad": "<input className=\"border border-zinc-200\"/> .",
       "good": "<input className=\"border border-zinc-500\"/>"
@@ -852,7 +852,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Text overlaid on images must meet contrast",
+      "description": "Text overlaid on images must meet the same contrast requirements as regular text.",
       "whyItMatters": "Busy photographic backgrounds make overlaid text illegible. Using dark scrims or solid backing plates ensures text meets safety contrast margins.",
       "bad": "White text directly on a busy photo.",
       "good": "Same photo with a <div className=\"bg-black/60 absolute inset-0\"/> scrim or\ntext in a solid pill."
@@ -866,7 +866,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Custom ::selection styles must maintain \u22654.5:1",
+      "description": "Custom ::selection styles must maintain ≥4.5:1 contrast ratio.",
       "whyItMatters": "Custom text selection states must retain high contrast, ensuring selected text remains fully readable against the custom highlight color.",
       "bad": "A <style> block injecting ::selection { background: #fff5; color: #fff } .",
       "good": "::selection { background: #1e40af; color: #fff }"
@@ -880,7 +880,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/orientation.html",
       "level": "AA",
       "obsolete": false,
-      "description": "Never lock orientation. Content must work in",
+      "description": "Never lock orientation. Content must work in both portrait and landscape modes.",
       "whyItMatters": "Locking the screen orientation to portrait or landscape prevents users on fixed mounts (like wheelchairs) from reading or interacting with the site.",
       "bad": "A demo card with CSS @media (orientation: portrait) { .lock { display:\nblock } } showing a \"Please rotate your device\" overlay.",
       "good": "Same card without the lock; content reflows for both orientations."
@@ -894,7 +894,7 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
       "level": "AA",
       "obsolete": false,
-      "description": "No horizontal scrolling at 320px viewport",
+      "description": "No horizontal scrolling at 320px viewport width.",
       "whyItMatters": "Avoiding horizontal scroll at standard widths ensures content wraps vertically, allowing users of screen magnifiers and mobile devices to read smoothly.",
       "bad": "A <div style={{width:'1200px'}}> inside a 320px container forcing horizontal\nscroll.",
       "good": "Same content with max-width:100% and flex-wrap:wrap"
@@ -908,24 +908,24 @@
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html",
       "level": "AAA",
       "obsolete": false,
-      "description": "Touch targets must be \u226544\u00d744px with adequate",
+      "description": "Touch targets must be ≥44×44px with adequate spacing between them.",
       "whyItMatters": "A minimum touch target size of 44x44px ensures people with tremors, motor impairments, or large fingers can activate controls without error.",
-      "bad": "Three icon buttons each 18\u00d718px crammed together.",
+      "bad": "Three icon buttons each 18×18px crammed together.",
       "good": "Three icon buttons each min-h-[44px] min-w-[44px] with gap-2"
     },
     {
       "id": "interactive-spacing",
-      "title": "Ensure sufficient space between interactive items in order to",
+      "title": "Ensure sufficient space between interactive items",
       "category": "mobile-touch",
       "wcag": "2.4.1",
       "wcagTitle": "Bypass Blocks",
       "wcagUrl": "https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks.html",
       "level": "A",
       "obsolete": false,
-      "description": "Interactive elements must have enough spacing",
+      "description": "Interactive elements must have enough spacing to prevent accidental activation.",
       "whyItMatters": "Adequate spacing around touch zones prevents accidental triggers and provides motor-impaired users a safe area to swipe and scroll.",
-      "bad": "A vertical list of full-width buttons with gap-0 \u2014 no scroll dead-zone.",
-      "good": "Same list with gap-3 plus margin so a tremor-affected user can scroll between\nthem.\n7. Final implementation notes\nSingle JSX file: Put CHECKLIST in the same file. With 64 entries \u00d7 ~3 lines of metadata +\ntwo small functional components per entry, expect roughly 1,200\u20131,500 LOC. Acceptable\nfor a demo.\nLucide icons used: CheckCircle2 , XCircle , AlertCircle , ExternalLink , Search ,\nSave , Volume2 , VolumeX , Filter , RotateCcw , plus the category icons listed in \u00a71.\nSticky-but-accessible header: Don't trap focus; the skip link demo (#29) must be the first\nfocusable element on the actual page (eat-your-own-dog-food).\nSafety guards on demos: The flashing demo (#44) must NOT actually flash above 3 Hz on\nrender; gate \"Show flashing demo\" behind a confirm and render a static image with overlay\ncaption. The autoplay audio (#40) must be muted by default and gated behind a button.\nThe autofocus demo (#10) must be gated so it can't steal page focus on initial mount.\nPersisting progress: localStorage key a11y-checklist-done (JSON array of IDs).\nPrint stylesheet: @media print { .demo-surface { box-shadow: none } aside {\ndisplay: none } } .\n\nRecommendations\n1. Build in this order: (1) data array with empty badDemo / goodDemo placeholders \u2192 (2)\nlayout shell + filters + progress \u2192 (3) fill in badDemo / goodDemo for one category at a time,\nstarting with Controls and Forms (highest visual variety, most pedagogical value). Ship\nafter each category.\n2. Test the app against itself. Run axe DevTools and a screen reader (NVDA on Windows,\nVoiceOver on macOS) on the finished build before merging \u2014 the app fails its own purpose\nif it has any A or AA violations in its chrome. Threshold: zero axe-detected violations at AA\nbefore merging to main.\n3. Threshold to add a \"Print as PDF audit checklist\" feature: ship only after all 16 categories\nrender and pass internal axe scans. Threshold to add per-team progress sync\n(Supabase/Firebase): only if more than one user requests it; localStorage covers solo use.\n4. Threshold to upgrade target to WCAG 2.2 AA-strict: when you remove items #4 and #32\nfrom the data (or display them only as historical/educational), since their underlying SC\n(4.1.1 Parsing) is obsolete in WCAG 2.2. Until then, surface the obsolete state in the UI rather\nthan pretending it still counts.\n\n5. License: Credit \"Checklist content adapted from The A11Y Project (APLv2,\nhttps://www.a11yproject.com/checklist/)\" in the footer; APLv2 requires attribution but\nallows derivative works.\n\nCaveats\nThe A11Y Project page does not display A/AA/AAA levels per item; the levels in \u00a76 come\nfrom cross-referencing each item's cited success criterion against the W3C WCAG 2.2\nRecommendation. If a11yproject.com swaps an item's WCAG link (e.g. retiring a 4.1.1\nreference in favor of 1.3.1), update the data file accordingly.\n4.1.1 Parsing (used for items #4 \"Validate your HTML\" and #32 <th scope> ) is\n\nobsolete in WCAG 2.2. The W3C says verbatim: \"This criterion has been removed from\nWCAG 2.2.\" (https://www.w3.org/WAI/WCAG22/Understanding/parsing.html). Keep the\nitems, mark them obsolete in the badge, and link to the W3C parsing-removal note.\nImplementers should still perform the underlying check (validity helps assistive tech\nindirectly), but it no longer counts toward formal WCAG 2.2 conformance. W3C\nG201 is a Technique, not a Success Criterion \u2014 there is no required conformance level for\n\n\"warn before opening new window\". The A11Y Project itself flags this verbatim: \"While this\ntechnique is technically not required for compliance, it is an often-cited area of frustration\nfor many different kinds of assistive technology users.\"\nItem count is 64, taken directly from the live page on May 7, 2026. If the A11Y Project edits\nthe checklist (the project is an active GitHub repo at a11yproject/a11yproject.com),\nregenerate the array from the source markdown.\nThe \"8th grade reading level\" target in item #1 is the A11Y Project's own framing; the W3C\nWCAG 2.2 SC 3.1.5 itself uses \"lower secondary education level\" \u2014 they are roughly\nequivalent, but the description in the data should be quoted verbatim as the A11Y Project\nwrote it. W3C W3C\nSome demos (#44 seizure triggers, #40 autoplay, #10 autofocus) have safety/UX\nimplications. The bad demo must SIMULATE the failure (still image with overlay text\n\"Imagine this strobing at 5 Hz\") rather than actually trigger it on render. Build these last so\nQA can verify the gating works before any real user encounters them."
+      "bad": "A vertical list of full-width buttons with gap-0 — no scroll dead-zone.",
+      "good": "Same list with gap-3 plus margin so a tremor-affected user can scroll between them."
     }
   ]
 }

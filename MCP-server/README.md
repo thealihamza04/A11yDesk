@@ -20,10 +20,16 @@ Integrating this server into your developer workflow empowers coding agents (lik
 First, install the MCP server globally on your local machine using npm:
 
 ```bash
-npm install -g a11y-mcp-server
+npm install -g @thealihamza04/a11y-mcp-server
 ```
 
-*(Alternatively, you can run it on the fly using `npx a11y-mcp` if supported by your IDE config).*
+This installs the `a11y-mcp` executable used in the config examples below.
+
+If your editor supports `npx`, you can also run the server without a global install:
+
+```bash
+npx -y @thealihamza04/a11y-mcp-server
+```
 
 ---
 
@@ -40,6 +46,19 @@ Add the server to your Claude desktop config file (usually located at `~/.claude
   "mcpServers": {
     "a11y-checklist": {
       "command": "a11y-mcp"
+    }
+  }
+}
+```
+
+Or, without a global install:
+
+```json
+{
+  "mcpServers": {
+    "a11y-checklist": {
+      "command": "npx",
+      "args": ["-y", "@thealihamza04/a11y-mcp-server"]
     }
   }
 }
@@ -67,6 +86,19 @@ Or edit your global Cursor MCP config file (`~/.cursor/mcp.json`):
 }
 ```
 
+Or use `npx` directly:
+
+```json
+{
+  "mcpServers": {
+    "a11y-checklist": {
+      "command": "npx",
+      "args": ["-y", "@thealihamza04/a11y-mcp-server"]
+    }
+  }
+}
+```
+
 ### 3. Windsurf
 
 Add the server to your Windsurf configuration file (usually located at `~/.codeium/windsurf/mcp_config.json`):
@@ -76,6 +108,19 @@ Add the server to your Windsurf configuration file (usually located at `~/.codei
   "mcpServers": {
     "a11y-checklist": {
       "command": "a11y-mcp"
+    }
+  }
+}
+```
+
+Or, if you prefer not to install globally:
+
+```json
+{
+  "mcpServers": {
+    "a11y-checklist": {
+      "command": "npx",
+      "args": ["-y", "@thealihamza04/a11y-mcp-server"]
     }
   }
 }
@@ -119,12 +164,16 @@ Retrieves all accessibility rules belonging to one of the 16 standard A11Y Proje
 Lists all rules matching a specific WCAG compliance level (`A`, `AA`, `AAA`, or `Technique`).
 * **Arguments**:
   - `level` (string, required): Compliance level to list.
+* **Validation**: Invalid values now return a guided error with the allowed levels.
 * **Example Prompt**: `"What are the required Level AA criteria?"`
 
 ### 4. `check_code`
-Performs robust, pattern-based static analysis checks on an HTML or JSX code snippet to detect common accessibility violations (like missing `alt` attributes, un-labeled forms, non-semantic buttons, or user-scaling lockouts) and returns structured recommendations.
+Runs lightweight static analysis on an HTML or JSX snippet across images, forms, keyboard, controls, headings, tables, media, and animation. The audit is now context-aware, so document-only rules such as `<html lang>` and page heading structure can be scoped more accurately when you provide file context.
 * **Arguments**:
   - `code` (string, required): The HTML or JSX code snippet to audit.
+  - `filename` (string, optional): Source filename such as `Header.tsx` or `index.html` to improve snippet vs page inference.
+  - `mode` (string, optional): `auto`, `snippet`, `component`, or `document`.
+* **Response shape**: The server returns both human-readable text and structured JSON content so MCP clients can display or parse results more reliably.
 * **Example Prompt**: `"Check this code snippet for accessibility issues: <img src='logo.png' />"`
 
 ### 5. `get_all_rules`
