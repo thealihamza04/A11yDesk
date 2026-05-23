@@ -4,6 +4,12 @@ A two-part project: an **MCP server** that exposes 64 WCAG 2.2 accessibility rul
 
 ---
 
+## Architecture
+
+![A11Y Architecture Diagram](./assets/a11y_architecture.png)
+
+---
+
 ## Structure
 
 ```
