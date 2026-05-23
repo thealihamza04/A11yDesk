@@ -102,24 +102,24 @@ export default function App() {
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-900 antialiased pt-10">
       <Helmet>
-        <title>A11Y Checklist — WCAG 2.2 Interactive Accessibility Audit Tool</title>
-        <meta name="google-site-verification" content="MjJgQ48HUspHx7bWmzK-xQst--gGKOZonCL6SWxQ7qY" />
-        <meta name="description" content="Interactive WCAG 2.2 accessibility checklist. Audit, filter, and track your web project's compliance with levels A, AA, and AAA standards in real time." />
-        <meta name="keywords" content="accessibility, wcag 2.2, a11y checklist, web standard compliance, a11y project, accessibility auditor" />
+        <title>A11Y Checklist by thealihamza04 — WCAG 2.2 Interactive Accessibility Audit Tool</title>
+        <meta name="google-site-verification" content="mahIsZ464GV0kZKIbjK4thqbQEu49WZTOQwc_xwc4K8" />
+        <meta name="description" content="Interactive WCAG 2.2 accessibility checklist, projects, and a11y tools developed by thealihamza04. Audit, filter, and track compliance with A11y by thealihamza04." />
+        <meta name="keywords" content="thealihamza04, projects by thealihamza04, thealihamza04 projects, a11y by thealihamza04, accessibility, wcag 2.2, a11y checklist, web standard compliance, a11y project, accessibility auditor" />
         <link rel="canonical" href="https://a11ydesk.com" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="A11Y Checklist — WCAG 2.2 Interactive Accessibility Audit Tool" />
-        <meta property="og:description" content="Interactive WCAG 2.2 accessibility checklist. Audit, filter, and track your web project's compliance with levels A, AA, and AAA standards in real time." />
+        <meta property="og:title" content="A11Y Checklist by thealihamza04 — WCAG 2.2 Interactive Accessibility Audit Tool" />
+        <meta property="og:description" content="Interactive WCAG 2.2 accessibility checklist, projects, and a11y tools developed by thealihamza04. Audit, filter, and track compliance with A11y by thealihamza04." />
         <meta property="og:url" content="https://a11ydesk.com" />
         <meta property="og:image" content="https://a11ydesk.com/assets/a11y_architecture.png" />
-        <meta property="og:site_name" content="A11Y Checklist" />
+        <meta property="og:site_name" content="A11Y Checklist by thealihamza04" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="A11Y Checklist — WCAG 2.2 Interactive Accessibility Audit Tool" />
-        <meta name="twitter:description" content="Interactive WCAG 2.2 accessibility checklist. Audit, filter, and track your web project's compliance with levels A, AA, and AAA standards in real time." />
+        <meta name="twitter:title" content="A11Y Checklist by thealihamza04 — WCAG 2.2 Interactive Accessibility Audit Tool" />
+        <meta name="twitter:description" content="Interactive WCAG 2.2 accessibility checklist, projects, and a11y tools developed by thealihamza04. Audit, filter, and track compliance with A11y by thealihamza04." />
         <meta name="twitter:image" content="https://a11ydesk.com/assets/a11y_architecture.png" />
 
         {/* SEO Directives */}
@@ -130,14 +130,23 @@ export default function App() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "A11Y Checklist",
+            "name": "A11Y Checklist by thealihamza04",
             "url": "https://a11ydesk.com",
-            "description": "Interactive WCAG 2.2 accessibility checklist. Audit, filter, and track your web project's compliance with levels A, AA, and AAA standards easily.",
+            "description": "Interactive WCAG 2.2 accessibility checklist, projects, and a11y tools developed by thealihamza04.",
             "inLanguage": "en",
             "license": "https://opensource.org/licenses/MIT",
+            "author": {
+              "@type": "Person",
+              "name": "thealihamza04",
+              "url": "https://github.com/thealihamza04"
+            },
+            "creator": {
+              "@type": "Person",
+              "name": "thealihamza04"
+            },
             "publisher": {
               "@type": "Organization",
-              "name": "A11Y Accessibility Toolkit Team"
+              "name": "A11Y Accessibility Toolkit Team by thealihamza04"
             }
           })}
         </script>
@@ -145,12 +154,17 @@ export default function App() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Interactive WCAG 2.2 Accessibility Checklist",
-            "description": "Interactive WCAG 2.2 accessibility checklist. Audit, filter, and track your web project's compliance with levels A, AA, and AAA rules easily.",
+            "name": "Interactive WCAG 2.2 Accessibility Checklist by thealihamza04",
+            "description": "Interactive WCAG 2.2 accessibility checklist, projects, and a11y tools developed by thealihamza04.",
             "url": "https://a11ydesk.com",
+            "author": {
+              "@type": "Person",
+              "name": "thealihamza04",
+              "url": "https://github.com/thealihamza04"
+            },
             "isPartOf": {
               "@type": "WebSite",
-              "name": "A11Y Checklist",
+              "name": "A11Y Checklist by thealihamza04",
               "url": "https://a11ydesk.com"
             }
           })}
@@ -435,7 +449,14 @@ export default function App() {
               </>
             )}
 
-            <footer className="mt-8 pt-6 border-t border-zinc-200 text-center text-xs text-zinc-400 space-y-1">
+            <footer className="mt-8 pt-6 border-t border-zinc-200 text-center text-xs text-zinc-400 space-y-1.5">
+              <p className="text-zinc-500 font-medium">
+                Developed by{' '}
+                <a href="https://github.com/thealihamza04" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-700 font-semibold">
+                  thealihamza04<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+                . Explore other open-source a11y tools and projects by thealihamza04.
+              </p>
               <p>
                 Checklist content adapted from{' '}
                 <a href="https://www.a11yproject.com/checklist/" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-600">

@@ -205,24 +205,24 @@ npm install -g @thealihamza04/a11y-mcp-server
   return (
     <main id="main" className="max-w-3xl mx-auto px-4 sm:px-6 py-8 space-y-8">
       <Helmet>
-        <title>A11Y MCP Server — AI Coding Agent Accessibility Auditor</title>
-        <meta name="google-site-verification" content="MjJgQ48HUspHx7bWmzK-xQst--gGKOZonCL6SWxQ7qY" />
-        <meta name="description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents (Claude Code, Cursor, Windsurf). Discover and audit accessibility errors in real time." />
-        <meta name="keywords" content="model context protocol, mcp server, claude code, cursor ai, windsurf, ai coding tools, automatic accessibility audit, wcag 2.2 rules" />
+        <title>A11Y MCP Server by thealihamza04 — AI Coding Agent Accessibility Auditor</title>
+        <meta name="google-site-verification" content="mahIsZ464GV0kZKIbjK4thqbQEu49WZTOQwc_xwc4K8" />
+        <meta name="description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents. Developed by thealihamza04. Discover and audit accessibility errors with a11y tools by thealihamza04." />
+        <meta name="keywords" content="thealihamza04, projects by thealihamza04, thealihamza04 projects, a11y by thealihamza04, model context protocol, mcp server, claude code, cursor ai, windsurf, ai coding tools, automatic accessibility audit, wcag 2.2 rules" />
         <link rel="canonical" href="https://a11ydesk.com/ai" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="A11Y MCP Server — AI Coding Agent Accessibility Auditor" />
-        <meta property="og:description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents (Claude Code, Cursor, Windsurf). Discover and audit accessibility errors in real time." />
+        <meta property="og:title" content="A11Y MCP Server by thealihamza04 — AI Coding Agent Accessibility Auditor" />
+        <meta property="og:description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents. Developed by thealihamza04. Discover and audit accessibility errors with a11y tools by thealihamza04." />
         <meta property="og:url" content="https://a11ydesk.com/ai" />
         <meta property="og:image" content="https://a11ydesk.com/assets/a11y_architecture.png" />
-        <meta property="og:site_name" content="A11Y Checklist" />
+        <meta property="og:site_name" content="A11Y Checklist by thealihamza04" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="A11Y MCP Server — AI Coding Agent Accessibility Auditor" />
-        <meta name="twitter:description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents (Claude Code, Cursor, Windsurf). Discover and audit accessibility errors in real time." />
+        <meta name="twitter:title" content="A11Y MCP Server by thealihamza04 — AI Coding Agent Accessibility Auditor" />
+        <meta name="twitter:description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents. Developed by thealihamza04. Discover and audit accessibility errors with a11y tools by thealihamza04." />
         <meta name="twitter:image" content="https://a11ydesk.com/assets/a11y_architecture.png" />
 
         {/* SEO Directives */}
@@ -233,11 +233,11 @@ npm install -g @thealihamza04/a11y-mcp-server
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "a11y-mcp-server",
+            "name": "a11y-mcp-server by thealihamza04",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "All",
             "softwareVersion": "1.0.0",
-            "description": "Model Context Protocol (MCP) server that exposes 64 WCAG 2.2 accessibility rules as queryable tools for AI coding assistants (Claude Code, Cursor, Windsurf) to audit codebases in real time.",
+            "description": "Model Context Protocol (MCP) server that exposes 64 WCAG 2.2 accessibility rules as queryable tools for AI coding assistants. Developed by thealihamza04.",
             "downloadUrl": "https://www.npmjs.com/package/@thealihamza04/a11y-mcp-server",
             "requirements": "Node.js >= 16",
             "offers": {
@@ -247,7 +247,12 @@ npm install -g @thealihamza04/a11y-mcp-server
             },
             "author": {
               "@type": "Person",
-              "name": "Ali Hamza"
+              "name": "thealihamza04",
+              "url": "https://github.com/thealihamza04"
+            },
+            "creator": {
+              "@type": "Person",
+              "name": "thealihamza04"
             }
           })}
         </script>
@@ -420,7 +425,14 @@ npm install -g @thealihamza04/a11y-mcp-server
       </SectionCard>
 
       {/* Footer */}
-      <footer className="pt-4 border-t border-zinc-200 text-center text-xs text-zinc-400 space-y-1">
+      <footer className="pt-4 border-t border-zinc-200 text-center text-xs text-zinc-400 space-y-1.5">
+        <p className="text-zinc-500 font-medium">
+          Developed by{' '}
+          <a href="https://github.com/thealihamza04" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-700 font-semibold">
+            thealihamza04<span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          . Explore other open-source a11y tools and projects by thealihamza04.
+        </p>
         <p>
           Checklist content adapted from{' '}
           <a href="https://www.a11yproject.com/checklist/" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-600">
