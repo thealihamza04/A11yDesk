@@ -3,6 +3,7 @@ import {
   Bot, Copy, Check, ExternalLink, Download, Terminal,
   Globe, FileCode, Cpu, BookOpen, ChevronDown, ChevronUp,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -203,6 +204,55 @@ npm install -g @thealihamza04/a11y-mcp-server
 
   return (
     <main id="main" className="max-w-3xl mx-auto px-4 sm:px-6 py-8 space-y-8">
+      <Helmet>
+        <title>A11Y MCP Server — AI Coding Agent Accessibility Auditor</title>
+        <meta name="google-site-verification" content="MjJgQ48HUspHx7bWmzK-xQst--gGKOZonCL6SWxQ7qY" />
+        <meta name="description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents (Claude Code, Cursor, Windsurf). Discover and audit accessibility errors in real time." />
+        <meta name="keywords" content="model context protocol, mcp server, claude code, cursor ai, windsurf, ai coding tools, automatic accessibility audit, wcag 2.2 rules" />
+        <link rel="canonical" href="https://a11ydesk.com/ai" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="A11Y MCP Server — AI Coding Agent Accessibility Auditor" />
+        <meta property="og:description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents (Claude Code, Cursor, Windsurf). Discover and audit accessibility errors in real time." />
+        <meta property="og:url" content="https://a11ydesk.com/ai" />
+        <meta property="og:image" content="https://a11ydesk.com/assets/a11y_architecture.png" />
+        <meta property="og:site_name" content="A11Y Checklist" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="A11Y MCP Server — AI Coding Agent Accessibility Auditor" />
+        <meta name="twitter:description" content="Integrate 64 WCAG 2.2 accessibility rules directly with AI agents (Claude Code, Cursor, Windsurf). Discover and audit accessibility errors in real time." />
+        <meta name="twitter:image" content="https://a11ydesk.com/assets/a11y_architecture.png" />
+
+        {/* SEO Directives */}
+        <meta name="robots" content="index, follow" />
+
+        {/* JSON-LD SoftwareApplication Schema (GEO / AEO) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "a11y-mcp-server",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "All",
+            "softwareVersion": "1.0.0",
+            "description": "Model Context Protocol (MCP) server that exposes 64 WCAG 2.2 accessibility rules as queryable tools for AI coding assistants (Claude Code, Cursor, Windsurf) to audit codebases in real time.",
+            "downloadUrl": "https://www.npmjs.com/package/@thealihamza04/a11y-mcp-server",
+            "requirements": "Node.js >= 16",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Ali Hamza"
+            }
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero */}
       <div className="text-center space-y-4 py-4">
         <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-zinc-900 ring-1 ring-zinc-800 mb-2">
@@ -332,7 +382,8 @@ npm install -g @thealihamza04/a11y-mcp-server
               className="font-semibold underline text-emerald-600 hover:text-emerald-700 hover:opacity-90 inline-flex items-center gap-0.5"
             >
               @thealihamza04/a11y-mcp-server
-              <ExternalLink className="h-3 w-3 inline" />
+              <ExternalLink className="h-3 w-3 inline" aria-hidden="true" />
+              <span className="sr-only"> (opens in a new tab)</span>
             </a>
             .
           </>

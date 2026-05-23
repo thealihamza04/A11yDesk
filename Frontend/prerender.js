@@ -24,14 +24,19 @@ async function prerender() {
   // Dynamic import of the built server module
   const { render } = await import(serverEntryPath)
 
-  // 3. Render the app's HTML on the server
-  const { html } = render()
+  const helmetContext = {}
 
-  // 4. Inject the pre-rendered HTML into the root div
-  const htmlWithPrerender = template.replace(
-    `<div id="root"></div>`,
-    `<div id="root">${html}</div>`
-  )
+  // 3. Render the app's HTML on the server
+  const { html } = render(helmetContext)
+  const { helmet } = helmetContext
+
+  // 4. Inject the pre-rendered HTML and SEO tags
+  const htmlWithPrerender = template
+    .replace(`<div id="root"></div>`, `<div id="root">${html}</div>`)
+    .replace(`<!-- helmet-title -->`, helmet.title ? helmet.title.toString() : '')
+    .replace(`<!-- helmet-meta -->`, helmet.meta ? helmet.meta.toString() : '')
+    .replace(`<!-- helmet-link -->`, helmet.link ? helmet.link.toString() : '')
+    .replace(`<!-- helmet-script -->`, helmet.script ? helmet.script.toString() : '')
 
   // 5. Overwrite the index.html with the pre-rendered content
   fs.writeFileSync(templatePath, htmlWithPrerender, 'utf-8')

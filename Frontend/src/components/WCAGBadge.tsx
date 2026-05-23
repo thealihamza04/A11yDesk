@@ -17,7 +17,7 @@ export function WCAGBadge({ level, wcag, wcagTitle, wcagUrl, obsolete }: Props) 
       <a href={wcagUrl} target="_blank" rel="noopener noreferrer"
         className={`${base} bg-zinc-200 text-zinc-500 line-through`}
         title="This criterion is obsolete and removed in WCAG 2.2">
-        WCAG {wcag} — Obsolete
+        WCAG {wcag} — Obsolete<span className="sr-only"> (opens in a new tab)</span>
       </a>
     );
   }
@@ -37,6 +37,7 @@ export function WCAGBadge({ level, wcag, wcagTitle, wcagUrl, obsolete }: Props) 
       title={wcagTitle}>
       {label}
       <span className="font-bold">{level}</span>
+      <span className="sr-only"> (opens in a new tab)</span>
     </a>
   );
 }
